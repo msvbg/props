@@ -1,12 +1,18 @@
 # Props
 
-> A JavaScript DSL written with innocent abuse of ES6 proxies.
+> A pure functional, Turing-complete JavaScript DSL written with innocent abuse
+of ES6 proxies, generators and other ES6 features that make the code harder to
+read.
 
-```
+```js
 import Props from 'Props';
 
-let program = (new Props) .[1] .plus .$2;
-console.log(program(5)) // => 6
+let program = (new Props)
+    .let .x .$1 .plus .$2 .in
+    .let .y .$2 .in
+        .x .plus .y;
+        
+console.log(program(6, 3)) // => 12
 ```
 
 ## FAQ
@@ -16,9 +22,6 @@ Proxy abuse is currently legal in most states, with the notable exception of the
 * Is this fast?
 Props uses the new quantum entanglement features of ES6 to achieve faster-than-light speeds in ideal conditions. Big companies have been known to use it for Big Data crunching.
 
-* Seriously though, when would I use this?
-When your boss reads the previous paragraph and forces you to.
-
 ## License
 
-MIT © [Martin Svanberg](http://blog.martinsvanberg.com)
+MIT © [Martin Svanberg](http://martinsvanberg.com)
