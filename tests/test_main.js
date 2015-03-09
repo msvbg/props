@@ -60,4 +60,11 @@ describe('Props', function () {
         assert.strictEqual(program(3, 3), 1);
         assert.strictEqual(program(2, 3), 0);
     });
+
+    it('supports multiple programs', function () {
+        let add = (new Props) .$1 .plus .$2;
+        let subtract = (new Props) .$1 .minus .$2;
+
+        assert.strictEqual(add(5, subtract(3, 2)), 6);
+    });
 });
