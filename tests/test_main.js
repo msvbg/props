@@ -51,4 +51,15 @@ describe('Props', function () {
         assert.strictEqual(program1(), true);
         assert.strictEqual(program2(), false);
     });
+
+    it('supports if-then-else expressions', function () {
+        let program = (new Props)
+            .if .$1 .eq .$2 .then
+                [1]
+            .else
+                [0];
+
+        assert.strictEqual(program(3, 3), 1);
+        assert.strictEqual(program(2, 3), 0);
+    });
 });
