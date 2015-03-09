@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "test": "mocha --harmony --compilers js:6to5/register tests"
+    "test": "mocha --harmony --compilers js:babel/register tests"
   },
   "dependencies": {
-    "6to5": "*",
+    "babel": "^4.7.3",
     "harmony-reflect": "^1.1.1",
     "lodash": "^3.1.0",
     "mocha": "*"
