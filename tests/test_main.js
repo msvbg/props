@@ -45,11 +45,9 @@ describe('Props', function () {
     });
 
     it('supports comparison operators', function () {
-        let program1 = (new Props) [5] .eq [5];
-        let program2 = (new Props) [5] .neq [5];
+        let program = (new Props) [5] .eq [5];
 
-        assert.strictEqual(program1(), true);
-        assert.strictEqual(program2(), false);
+        assert.strictEqual(program(), true);
     });
 
     it('supports if-then-else expressions', function () {
