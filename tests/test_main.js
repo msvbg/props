@@ -34,14 +34,21 @@ describe('Props', function () {
         
         assert.strictEqual(program(6, 3), 9);
     });
+
+    it('allows expressions in let bindings', function () {
+        let program = (new Props)
+            .let .x .$1 .plus .$2 .in
+            .let .y .$2 .in
+                .x .plus .y;
+        
+        assert.strictEqual(program(6, 3), 12);
+    });
+
+    it('supports comparison operators', function () {
+        let program1 = (new Props) [5] .eq [5];
+        let program2 = (new Props) [5] .neq [5];
+
+        assert.strictEqual(program1(), true);
+        assert.strictEqual(program2(), false);
+    });
 });
-
-/*
-
-    let program = (new Props)
-        .let .x .be [5] .in
-            .x .plus [10];
-
-    program.run() // => 15
-
- */
