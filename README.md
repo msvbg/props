@@ -17,10 +17,18 @@ console.log(program(6, 3)) // => 12
 
 ## FAQ
 * Is this legal?
-Proxy abuse is currently legal in most states, with the notable exception of the Republic of Nauru. Nauruans, please be careful.
+Proxy abuse is currently legal in most states, with the notable exception of the
+Republic of Nauru. Nauruans, please be careful.
 
 * Is this fast?
-Props uses the new quantum entanglement features of ES6 to achieve faster-than-light speeds in ideal conditions. Big companies have been known to use it for Big Data crunching.
+Props uses the new quantum entanglement features of ES6 to achieve
+faster-than-light speeds in ideal conditions. Big companies have been known to
+use it for Big Data crunching.
+
+## Usage
+To run tests: `npm test`
+
+Must be run with `node --harmony`. Proxies are not yet supported in browsers.
 
 ## License
 
